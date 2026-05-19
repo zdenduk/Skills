@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debate Me"
+  short_description: "Debate my answer from both sides and take a reasoned stance."
+  default_prompt: "Use this skill to debate me: inspect both sides of my answer, give the strongest arguments, identify weaknesses, and take your stance."
