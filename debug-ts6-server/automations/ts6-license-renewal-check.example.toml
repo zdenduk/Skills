@@ -1,0 +1,15 @@
+# Copy this file into your local Codex automations directory and replace placeholders.
+# Keep the real automation.toml uncommitted because it contains private host,
+# SSH, local path, remote path, and scheduling details.
+
+version = 1
+id = "ts6-license-renewal-check"
+kind = "cron"
+name = "TS6 License Renewal Check"
+prompt = "Maintain the self-hosted TeamSpeak 6 server at <server-host>. Use the SSH key at <path-to-private-key> and connect as <ssh-user>. First run read-only checks: host health, docker ps, recent TeamSpeak 6 server logs, current image/platform, listeners on 9987/udp and 30033/tcp, and the TeamSpeak licensing/accounting expiry shown in logs. If the TS6 default/beta license is expired or expires on the run date, prepare an update plan for the existing compose project at <remote-compose-directory>: capture docker ps/logs/listeners/disk first, pull teamspeaksystems/teamspeak6-server:latest for the configured platform, run docker compose up -d <teamspeak-service-name>, then verify the container stays up and listens on 9987/udp and 30033/tcp. Preserve the persistent TeamSpeak data volume. Do not delete volumes, change firewall rules, prune Docker resources, or alter unrelated services. Treat the update/restart as state-changing work that requires explicit approval unless this local automation has been reviewed and intentionally enabled for unattended remediation. Report the expiry date found, actions taken or proposed, final container state, listening ports, and any remaining client-connectivity risk."
+status = "PAUSED"
+rrule = "DTSTART:<YYYYMMDD>T000500\nRRULE:FREQ=MONTHLY;INTERVAL=2"
+model = "<codex-model>"
+reasoning_effort = "medium"
+execution_environment = "local"
+cwds = ["<local-workspace-path>"]

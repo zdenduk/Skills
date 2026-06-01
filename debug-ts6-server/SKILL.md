@@ -11,6 +11,8 @@ This public skill intentionally avoids real hostnames, IP addresses, usernames, 
 
 Keep private connection details in `references/server-profile.local.md`, copied from `references/server-profile.example.md`. Do not commit the local profile or any private key material.
 
+If you need a recurring license renewal check, start from `automations/ts6-license-renewal-check.example.toml`. Keep the real active automation config local because it may contain private host, SSH, local path, remote path, schedule, and remediation details.
+
 ## Workflow
 
 1. Read `references/server-profile.local.md` before connecting or suggesting host-specific fixes. If it is missing, read `references/server-profile.example.md` and ask the user for the missing private connection details.

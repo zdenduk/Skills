@@ -8,3 +8,7 @@
 # Machine-specific skill references
 *.local.md
 debug-ts6-server/references/server-profile.md
+
+# Machine-specific automation configs
+*.local.toml
+debug-ts6-server/automations/ts6-license-renewal-check.toml
